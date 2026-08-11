@@ -1,0 +1,14 @@
+streamlit
+pandas
+numpy
+scipy
+pyproj
+folium
+streamlit-folium
+staticmap
+openpyxl
+requests
+Pillow
+
+# Если вам нужна загрузка shapefile, раскомментируйте строку ниже:
+# geopandas
