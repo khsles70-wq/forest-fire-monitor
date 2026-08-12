@@ -1,4 +1,30 @@
-import os
+/* ============================================================
+   ИСПРАВЛЕНИЕ: выпадающие списки в тёмной теме
+   ============================================================ */
+ul[role="listbox"] {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 10px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6) !important;
+}
+li[role="option"],
+li[role="option"] div,
+li[role="option"] span {
+    color: #e6edf3 !important;
+}
+li[role="option"]:hover {
+    background-color: rgba(31,111,235,0.35) !important;
+    color: #ffffff !important;
+}
+li[role="option"][aria-selected="true"] {
+    background-color: #1f6feb !important;
+    color: #ffffff !important;
+}
+/* Текст в поле поиска внутри списков */
+[data-baseweb="select"] input,
+[data-baseweb="multi-select"] input {
+    color: #e6edf3 !important;
+}import os
 import io
 import math
 import re
@@ -183,7 +209,8 @@ li[role="option"][aria-selected="true"] {
 [data-baseweb="select"] input,
 [data-baseweb="multi-select"] input {
     color: #e6edf3 !important;
-}</style>
+} 
+</style>
     """,
         unsafe_allow_html=True,
     )
