@@ -1115,3 +1115,50 @@ def main():
 
 if __name__ == "__main__":
     main()
+# ============================================================
+# ИСПРАВЛЕНИЕ: выпадающие списки в тёмной теме
+# ============================================================
+st.markdown(
+    """
+    <style>
+    /* Закрытые списки (selectbox / multiselect) */
+    [data-baseweb="select"] > div,
+    [data-baseweb="multi-select"] > div {
+        background-color: #161b22 !important;
+        border: 1px solid #30363d !important;
+        border-radius: 8px !important;
+    }
+    [data-baseweb="select"] span,
+    [data-baseweb="multi-select"] span {
+        color: #e6edf3 !important;
+    }
+    /* Открытый список */
+    ul[role="listbox"] {
+        background-color: #161b22 !important;
+        border: 1px solid #30363d !important;
+        border-radius: 10px !important;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.6) !important;
+    }
+    li[role="option"],
+    li[role="option"] div,
+    li[role="option"] span {
+        color: #e6edf3 !important;
+    }
+    li[role="option"]:hover {
+        background-color: rgba(31,111,235,0.35) !important;
+        color: #ffffff !important;
+    }
+    li[role="option"][aria-selected="true"] {
+        background-color: #1f6feb !important;
+        color: #ffffff !important;
+    }
+    /* Поле поиска внутри списка */
+    [data-baseweb="select"] input,
+    [data-baseweb="multi-select"] input {
+        color: #e6edf3 !important;
+        background-color: #161b22 !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
